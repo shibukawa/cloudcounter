@@ -88,7 +88,7 @@ func TestDynamoIncrement(t *testing.T) {
 	}
 	var testKey CounterKey = "test"
 
-	counter := NewCounter(coll, 10)
+	counter := NewCounter(coll)
 	err = counter.Register(context.Background(), testKey)
 	assert.Nil(t, err)
 	count, err := counter.Get(context.Background(), testKey)
